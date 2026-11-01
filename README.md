@@ -14,7 +14,9 @@ assets. The application is proprietary; its source is maintained separately.
 ## Downloads
 
 Find installers and version-specific notes on the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
-From version 0.1.12, choose one installer from a release's assets:
+Routine updates contain the small standard installer. Selected milestone releases
+also include the offline package; find the newest offline package in the
+[release history](https://github.com/hangry-labs/Listen2Me/releases). Choose one installer:
 
 - **`Listen2Me-Setup.exe`**: small standard download; configure hosted recognition
   or explicitly download your preferred model. This is also the normal update.
@@ -58,7 +60,7 @@ download a local model. You can also set this up later inside the app.
   on CPU. Recognition and punctuation vary with speech, language and hardware.
 
 With the standard installer, model/runtime downloads are optional and substantially larger than the installer.
-Speech setup shows download sizes, progress and supported acceleration before
+The Model Wizard shows download sizes, progress and supported acceleration before
 use. Local GPU runtimes are downloaded separately when selected. Model licences
 and attribution remain in their downloaded folders.
 
@@ -115,9 +117,8 @@ automatic-update and SmartScreen behavior when online. The installer preserves s
 models; Fresh settings makes recoverable configuration/cache backups. Versions
 older than 0.1.9 need one manual tray Quit before their first update.
 
-The Support tab has an optional feedback form; no email or account is required.
-Reports are retained in the website feedback inbox; support-mailbox notifications
-are still being integrated. Only submitted text,
+The Support Us button has an optional feedback form; no email or account is required.
+Reports are retained in the website feedback inbox without email forwarding. Only submitted text,
 type, optional email and app version/platform are sent; the website also sees
 ordinary connection metadata. Failed submissions remain in the form and are not
 retried automatically.
@@ -138,3 +139,17 @@ free of charge and as is. Recognition can be wrong.
 Hangry Labs is the project/publisher brand. No support response time or service
 level is promised. Please do not post credentials, private recordings or sensitive
 dictation in public issues.
+
+Connection changes save automatically after a short pause, with an amber pending
+indicator and a brief Saved confirmation. Language menus use native language
+names and the selected model's advertised capabilities. Some models only support
+English; unknown hosted APIs still allow an explicit language code.
+
+The recording limit defaults to one hour. Local completed takes are processed in
+shorter consecutive pieces; accuracy around boundaries and processing time depend
+on the model. Hosted providers have their own duration, upload-size and timeout
+limits; longer capture does not override them. One hour of mono audio uses about
+110 MiB for raw samples alone, with additional processing memory. Cancel still
+discards a take; reaching the configured limit finishes it. The selected
+microphone is enumerated without opening it until you use your shortcut.
+Listen2Me's own feedback field can also receive dictation.
