@@ -14,13 +14,25 @@ jobs:
         run: |
           import pathlib, re, subprocess
           names = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
-          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
+          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|assets/screenshots/(dictate|connection)\.webp|assets/demo/listen2me-demo\.(webp|mp4)|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
+          media = re.compile(r'assets/(screenshots/(dictate|connection)\.webp|demo/listen2me-demo\.(webp|mp4))')
           private = re.compile(r'BEGIN [A-Z ]*PRIVATE KEY|github' + r'_pat_|\bgh[pousr]_[A-Za-z0-9]{20}|\bhf_[A-Za-z0-9]{20}|[CX]:[/\\]sandbox|192\.168\.0\.', re.I)
           for name in filter(None, names):
               assert allowed.fullmatch(name), f'Unexpected public file: {name}'
               p = pathlib.Path(name)
               assert not p.is_symlink(), f'Unexpected symlink: {name}'
+              if media.fullmatch(name):
+                  data = p.read_bytes()
+                  video = p.suffix == '.mp4'
+                  assert 16 <= len(data) <= (10 if video else 2) * 1024 * 1024, f'Invalid media size: {name}'
+                  if video:
+                      assert data[4:8] == b'ftyp', f'Invalid MP4 header: {name}'
+                  else:
+                      assert data[:4] == b'RIFF' and data[8:12] == b'WEBP' and int.from_bytes(data[4:8], 'little') == len(data) - 8, f'Invalid WebP header: {name}'
+                  continue
               assert not private.search(p.read_text(encoding='utf-8')), f'Possible private content: {name}'
           for name in ('README.md', 'LICENSE.txt', 'PRIVACY.txt', 'SECURITY.md', 'THIRD_PARTY_NOTICES.txt'):
               assert pathlib.Path(name).is_file()
           assert 'contact@hangrylabs.app' in pathlib.Path('README.md').read_text(encoding='utf-8')
+          for asset in re.findall(r'\]\((assets/[^)]+)\)', pathlib.Path('README.md').read_text(encoding='utf-8')):
+              assert pathlib.Path(asset).is_file(), f'Missing README media: {asset}'

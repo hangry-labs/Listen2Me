@@ -11,6 +11,22 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
+**Now in beta: 0.7.0.** Free to use, with local speech recognition or your own
+hosted endpoint.
+
+## See it in action
+
+[![Listen2Me live dictation demo: speech becomes text with a live on-screen preview](assets/demo/listen2me-demo.webp)](assets/demo/listen2me-demo.mp4)
+
+**[Watch the 8-second demo with sound](assets/demo/listen2me-demo.mp4)** · Select
+the animated preview to open the MP4 video.
+
+| Dictate | Connection |
+| --- | --- |
+| ![Dictate screen with waveform, shortcut controls and recognised words](assets/screenshots/dictate.webp) | ![Connection screen with selected model, language and live-preview options](assets/screenshots/connection.webp) |
+
+Screenshots were captured during development; small details may change between builds.
+
 ## Downloads
 
 Find installers and version-specific notes on the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
