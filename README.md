@@ -182,3 +182,11 @@ and when to update. Hangry Labs does not receive publisher analytics, usage
 profiles or automatic uploads of recordings/transcripts. Optional feedback and
 third-party download/hosted-ASR connections are described in the privacy notice
 and the Support Us page.
+
+Use Connection → Change to choose Local or Endpoint. For local recognition, choose
+CPU or an available NVIDIA GPU, then optionally filter by language. Auto shows
+all models; English-only packs remain English-only. Compatible model cards are
+listed in recommended order. The hardware summary explains what was detected,
+and GPU is disabled when no compatible NVIDIA GPU/driver is available. GPU use
+requires its verified runtime. Filtering never starts a download; choose
+Download / verify explicitly, then Use selected model when it is ready.
