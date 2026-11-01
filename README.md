@@ -16,10 +16,10 @@ hosted endpoint.
 
 ## See it in action
 
-[![Listen2Me live dictation demo: speech becomes text with a live on-screen preview](assets/demo/listen2me-demo.webp)](assets/demo/listen2me-demo.mp4)
+[![Listen2Me live dictation demo: speech becomes text with a live on-screen preview](assets/demo/listen2me-demo.webp)](https://github.com/hangry-labs/Listen2Me/raw/refs/heads/main/assets/demo/listen2me-demo.mp4)
 
-**[Watch the 8-second demo with sound](assets/demo/listen2me-demo.mp4)** · Select
-the animated preview to open the MP4 video.
+**[Download the 8-second demo with sound](https://github.com/hangry-labs/Listen2Me/raw/refs/heads/main/assets/demo/listen2me-demo.mp4)** · The animation plays
+in the README; select it to download the original MP4 with audio.
 
 | Dictate | Connection |
 | --- | --- |
