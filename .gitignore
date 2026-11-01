@@ -1,0 +1,7 @@
+*.exe
+*.zip
+*.cred
+.env
+.ai/
+build/
+release/

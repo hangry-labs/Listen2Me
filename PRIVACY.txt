@@ -1,0 +1,104 @@
+LISTEN2ME - PRIVACY AND DATA USE
+Version: 2026-11-01
+
+Listen2Me does not include publisher-operated analytics, advertising, account
+registration, remote microphone monitoring, or an automatic upload of recordings,
+transcripts or diagnostic reports to Hangry Labs. Only feedback you explicitly
+submit is sent to the publisher. This describes the app's behavior, not
+a guarantee about Windows, external software, or any server you choose.
+
+LOCAL SPEECH RECOGNITION
+With a downloaded local model, microphone audio is processed on this computer
+using the selected CPU or supported GPU. Local inference does not require an
+inference server or sending recordings to Hangry Labs. Downloads may be required
+first. Whisper and Parakeet process completed takes; Moonshine/Nemotron streaming works
+while you speak. The microphone is opened only for an explicit dictation action.
+
+HOSTED SPEECH RECOGNITION
+If you select a hosted endpoint, Listen2Me sends microphone audio directly to
+that endpoint. Compatible streaming sends chunks while you speak, including
+before a finish/cancel decision. Already sent audio cannot be recalled. The
+server can receive connection metadata and retain or process audio under its own
+terms. Requests for discovery, readiness, available models and languages also go
+to that endpoint. API credentials, when configured, are sent to that provider.
+Choose a provider you trust; use HTTPS outside a trusted local network. Merely
+saving the endpoint during installation does not send microphone audio.
+
+OPTIONAL MODEL AND RUNTIME DOWNLOADS
+Nothing downloads unless you explicitly select a model/download option. Files
+come from the upstream locations in the app's pinned catalog, including
+Hugging Face, GitHub, PyPI/pythonhosted.org and Moonshine's download servers.
+Those hosts/CDNs see ordinary request information such as your IP address,
+requested resource and request headers, and apply their own policies. File sizes
+and SHA-256 checks are verified locally. Hardware checks can inspect CPU, RAM,
+free disk space and GPU/driver availability locally to choose compatible options.
+No microphone audio is needed for those hardware checks.
+
+LOCAL STORAGE AND RETENTION
+Settings, model/runtime files and WebView2 browser data are stored in your user
+profile, normally under LOCALAPPDATA/Listen2Me. An explicit settings-path override
+can change settings and model locations. Settings include your chosen endpoint,
+model and shortcut. An API-token file stays at the location you configure.
+The optional keep-model-loaded setting retains selected model weights and native
+working buffers in RAM/VRAM between takes. Each take starts a separate recognition
+session. Pause, model/provider changes and quitting release that worker. Disabling
+the option releases it after each take. No secure buffer-erasure claim is made.
+Recordings and transcript history are kept in process memory, not intentionally
+saved as audio/transcript files or sent to the publisher. Up to ten completed
+takes can be retained during the session. Clear removes the app's transcript
+history, and quitting ends the session. This is not a secure-memory-erasure
+promise; Windows paging, crash dumps, external apps and backups are separate.
+When text is typed into another app, that app controls its own saving and sharing.
+
+KEYBOARD AND DESTINATION ACCESS
+The app observes keyboard pressed states for the shortcut and checks the originally focused Windows window/control
+before inserting text. It never returns to previously selected windows or fields.
+It does not keep
+a general typing history or read destination field contents. It simulates text
+input, so text can already be present in the receiving app when you cancel.
+
+INSTALLATION AND REMOVAL
+The installer presents the licence and this notice, then optionally configures
+speech/downloads using the same verified manager as the app. Setup progress may
+show download metadata. Optional installer/operating-system diagnostics can exist
+locally. Neither installation nor uninstall sends those diagnostics to Hangry Labs.
+Uninstall preserves settings/models. You may deliberately remove the data folder
+and any separately configured token file when you no longer need them.
+The installer's Fresh settings option renames existing settings and WebView2
+cache into timestamped backup files/folders and starts with default settings.
+Downloaded models and external token files are preserved. These local backups
+remain until you remove them; they may contain your prior settings/browser data.
+
+OPTIONAL FEEDBACK
+The Support tab can submit the message you write, its feedback type, app version,
+Windows platform identifier and an optional reply email to the Hangry Labs website.
+No account or reply email is required. Recordings, transcripts, endpoint settings,
+token files and diagnostic attachments are not included. Do not put secrets into
+your message. The website receives ordinary connection metadata, including your
+IP address, and controls feedback storage and handling under its own privacy
+notice. A successful submission is confirmed by the receiving website; failed
+submissions remain in the form during this app session and are not retried
+automatically. This is optional communication, not anonymous network transport.
+
+USER-REQUESTED APPLICATION UPDATES
+Check for updates contacts GitHub's Listen2Me release feed only when you click it.
+No startup or scheduled checks are performed. GitHub/CDNs receive your IP address
+and ordinary request metadata. Download update saves an installer locally under
+LOCALAPPDATA/Listen2Me/updates, checks its size, checksum, publisher signature and
+version. Install & restart pauses dictation, starts setup, and closes/reopens the
+app. Normal updates preserve settings/models. An installer is never started just
+because a release was found. Local update downloads may remain until removed.
+
+THIRD-PARTY SOFTWARE AND WEBSITE
+Windows, WebView2, device drivers, hosted ASR providers, download hosts and any
+website you visit may have their own network behavior, diagnostics and policies.
+This app notice does not describe the Hangry Labs website's hosting logs.
+For questions or privacy requests: contact@hangrylabs.app
+The app's About links open your browser or email application only when clicked.
+These external applications and destinations then apply their own policies.
+This release does not automatically check for or download application updates.
+GitHub hosts public installers, documentation and release notes. Visiting those
+pages or downloading an installer exposes ordinary request metadata to GitHub
+and its delivery providers, separate from local dictation.
+Product help: support@hangrylabs.app
+Private vulnerability reports: security@hangrylabs.app

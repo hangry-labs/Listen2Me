@@ -1,0 +1,26 @@
+name: Check public distribution files
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check public-only file inventory and contacts
+        shell: python
+        run: |
+          import pathlib, re, subprocess
+          names = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
+          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
+          private = re.compile(r'BEGIN [A-Z ]*PRIVATE KEY|github' + r'_pat_|\bgh[pousr]_[A-Za-z0-9]{20}|\bhf_[A-Za-z0-9]{20}|[CX]:[/\\]sandbox|192\.168\.0\.', re.I)
+          for name in filter(None, names):
+              assert allowed.fullmatch(name), f'Unexpected public file: {name}'
+              p = pathlib.Path(name)
+              assert not p.is_symlink(), f'Unexpected symlink: {name}'
+              assert not private.search(p.read_text(encoding='utf-8')), f'Possible private content: {name}'
+          for name in ('README.md', 'LICENSE.txt', 'PRIVACY.txt', 'SECURITY.md', 'THIRD_PARTY_NOTICES.txt'):
+              assert pathlib.Path(name).is_file()
+          assert 'contact@hangrylabs.app' in pathlib.Path('README.md').read_text(encoding='utf-8')

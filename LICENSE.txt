@@ -1,0 +1,39 @@
+LISTEN2ME - SOFTWARE LICENCE
+Version: 2026-10-31
+
+Copyright (c) 2026 the Listen2Me copyright owners. All rights reserved.
+Published by Hangry Labs.
+Contact: contact@hangrylabs.app
+Website: https://hangrylabs.app/
+
+1. Permission to use
+You may install and use Listen2Me free of charge for personal or business
+purposes, and keep backup copies for your own use. The software is proprietary.
+This licence does not grant ownership of the software or its source code.
+
+Except as permitted by applicable law, you may not sell, sublicense,
+redistribute, modify or reverse-engineer the proprietary software, or create
+derivative works from it, without written permission. You may not remove
+copyright or ownership notices.
+
+2. Third-party components
+Third-party software, models and runtimes retain their own licences. Those
+licences govern those components; the restrictions above do not replace them.
+See THIRD_PARTY_NOTICES.txt and the notices supplied with downloaded models.
+
+3. Disclaimer
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED
+"AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+No maintenance, support or future updates are promised.
+
+4. Termination
+This licence terminates automatically if you breach its terms. Upon termination,
+you must stop using Listen2Me and delete all copies in your possession or control.
+
+Privacy and data handling are described in the accompanying privacy notice.
