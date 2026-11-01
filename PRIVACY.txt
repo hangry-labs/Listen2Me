@@ -44,7 +44,13 @@ LOCAL STORAGE AND RETENTION
 Settings, model/runtime files and WebView2 browser data are stored in your user
 profile, normally under LOCALAPPDATA/Listen2Me. An explicit settings-path override
 can change settings and model locations. Settings include your chosen endpoint,
-model and shortcut. An API-token file stays at the location you configure.
+model and shortcut. An existing API-token file stays at the location you configure. A key entered
+in Speech setup is saved in a Windows DPAPI-encrypted file under
+LOCALAPPDATA/Listen2Me/credentials, bound to the chosen server origin. Settings
+contain only its file reference, not the key itself. Windows user/profile access
+is required to decrypt it. Choosing a different server does not reuse the old
+key automatically. Disabling/replacing a reference can leave encrypted files
+until you remove them or the data folder; this is not a secure-erasure claim.
 By default, the selected installed local model is loaded when dictation is enabled
 and kept ready in RAM/VRAM. This does not open the microphone or send audio.
 Memory-saving options load at the start of a take and unload after a chosen idle
@@ -89,7 +95,8 @@ Windows platform identifier and an optional reply email to the Hangry Labs websi
 No account or reply email is required. Recordings, transcripts, endpoint settings,
 token files and diagnostic attachments are not included. Do not put secrets into
 your message. The website receives ordinary connection metadata, including your
-IP address, and controls feedback storage and handling under its own privacy
+IP address. The feedback service uses a keyed identifier derived from that IP
+address to limit repeated submissions, and controls feedback storage and handling under its own privacy
 notice. A successful submission is confirmed by the receiving website; failed
 submissions remain in the form during this app session and are not retried
 automatically. This is optional communication, not anonymous network transport.

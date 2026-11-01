@@ -190,3 +190,14 @@ listed in recommended order. The hardware summary explains what was detected,
 and GPU is disabled when no compatible NVIDIA GPU/driver is available. GPU use
 requires its verified runtime. Filtering never starts a download; choose
 Download / verify explicitly, then Use selected model when it is ready.
+
+Endpoint setup accepts an optional API key. New keys are encrypted for the
+current Windows user and tied to that server; only a file reference is saved in
+settings. Leave the field blank to keep a same-server key. Switching servers
+requires a new key if authentication is needed; Use no API key disables it.
+Existing token-file configuration remains supported.
+
+Click the model language field and type a native or English language name/code
+to narrow the choices. Enter selects a match; Escape keeps the previous choice.
+A compatible detected NVIDIA GPU is preselected in the chooser, while CPU remains
+available. Opening it does not change your running configuration until you apply.
