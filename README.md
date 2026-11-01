@@ -14,8 +14,21 @@ assets. The application is proprietary; its source is maintained separately.
 ## Downloads
 
 Find installers and version-specific notes on the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
-Use `Listen2Me-Setup.exe` from a release's assets. No Git checkout or development
-tools are required. Preview releases may change frequently.
+From version 0.1.12, choose one installer from a release's assets:
+
+- **`Listen2Me-Setup.exe`**: small standard download; configure hosted recognition
+  or explicitly download your preferred model. This is also the normal update.
+- **`Listen2Me-Setup-Offline-Parakeet.exe`**: includes Parakeet TDT v3 Q8 and its
+  CPU runtime for installation from a USB drive without a model download. It also
+  includes Microsoft's standalone WebView2 installer if that prerequisite is absent.
+
+Both install the same app per user and preserve existing settings/models. The
+offline installer is not a portable app; it installs on the target PC. New offline
+setups select CPU transcription automatically. Parakeet transcribes completed
+takes, supports 25 European languages, and does not provide live preview. Optional
+CUDA support and other models can be downloaded later.
+
+No Git checkout or development tools are required. Preview releases may change frequently.
 
 Current installers are **self-signed**, rather than signed by a publicly
 trusted publisher. Windows may display a trust warning. Each release includes
@@ -28,7 +41,7 @@ available to the in-app updater; that channel name does not imply a mature 1.0
 release. Review the release notes before installing.
 
 Requires Windows 10 version 1809 or newer / Windows 11, x64, a microphone and
-Microsoft WebView2 Runtime. The installer runs per user without administrator
+Microsoft WebView2 Runtime (bundled in the offline installer). The installer runs per user without administrator
 rights. Windows on ARM and non-Windows operating systems have not been qualified.
 
 ## Choose your speech recognition
@@ -44,7 +57,7 @@ download a local model. You can also set this up later inside the app.
 - Whisper Base, Small and Large v3 Turbo Q5 are also available. Turbo can be slow
   on CPU. Recognition and punctuation vary with speech, language and hardware.
 
-Model/runtime downloads are optional and substantially larger than the installer.
+With the standard installer, model/runtime downloads are optional and substantially larger than the installer.
 Speech setup shows download sizes, progress and supported acceleration before
 use. Local GPU runtimes are downloaded separately when selected. Model licences
 and attribution remain in their downloaded folders.
@@ -84,15 +97,27 @@ Session history is kept in process memory. Windows paging/crash dumps and the
 receiving application's own saving behavior are separate.
 
 Settings/models normally live in `%LOCALAPPDATA%/Listen2Me` and survive upgrades
-and uninstall. Model weights can remain loaded between takes; Pause releases the
-worker. Settings → Application updates offers an explicit check, verified
+and uninstall. Local models load and stay ready by default without opening the
+microphone. Settings can instead load on demand and unload after a chosen idle
+period, or after each take. Pause in the tray releases the worker. The voice card
+groups model, processing location, waveform, Hold/Toggle and the shortcut. Its
+release/discard help sits below it; About & legal has a separate tab.
+
+The footer shows your selected ASR and local loading/residency state. Hosted
+server memory is controlled by the provider and cannot be inferred from a
+successful connection. Click the version to open releases, or its circular
+refresh icon to check for updates. Settings → Application updates offers an explicit check, verified
 download and Install & restart action once stable releases are published.
-Nothing checks or installs automatically. The installer preserves settings and
+Listen2Me never checks or installs app updates automatically. Routine updates use
+the small standard installer, retaining previously installed models, including
+Parakeet from the offline edition. Microsoft's WebView2 Runtime has its own
+automatic-update and SmartScreen behavior when online. The installer preserves settings and
 models; Fresh settings makes recoverable configuration/cache backups. Versions
 older than 0.1.9 need one manual tray Quit before their first update.
 
 The Support tab has an optional feedback form; no email or account is required.
-The website receiving endpoint is still being prepared. Only submitted text,
+Reports are retained in the website feedback inbox; support-mailbox notifications
+are still being integrated. Only submitted text,
 type, optional email and app version/platform are sent; the website also sees
 ordinary connection metadata. Failed submissions remain in the form and are not
 retried automatically.

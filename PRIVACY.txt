@@ -34,15 +34,23 @@ and SHA-256 checks are verified locally. Hardware checks can inspect CPU, RAM,
 free disk space and GPU/driver availability locally to choose compatible options.
 No microphone audio is needed for those hardware checks.
 
+The Offline Parakeet installer already includes the pinned Parakeet v3 Q8 weights,
+CPU runtime and model card. It copies and verifies these local files without a
+model download or automatic CUDA download. On a new setup it selects local CPU
+transcription; an existing configured installation keeps its speech preferences.
+The standard installer and normal application updates do not include model weights.
+
 LOCAL STORAGE AND RETENTION
 Settings, model/runtime files and WebView2 browser data are stored in your user
 profile, normally under LOCALAPPDATA/Listen2Me. An explicit settings-path override
 can change settings and model locations. Settings include your chosen endpoint,
 model and shortcut. An API-token file stays at the location you configure.
-The optional keep-model-loaded setting retains selected model weights and native
-working buffers in RAM/VRAM between takes. Each take starts a separate recognition
-session. Pause, model/provider changes and quitting release that worker. Disabling
-the option releases it after each take. No secure buffer-erasure claim is made.
+By default, the selected installed local model is loaded when dictation is enabled
+and kept ready in RAM/VRAM. This does not open the microphone or send audio.
+Memory-saving options load at the start of a take and unload after a chosen idle
+period or after each take. Each take starts a separate recognition session. Pause,
+model/provider changes and quitting release the worker. No secure buffer-erasure
+claim is made.
 Recordings and transcript history are kept in process memory, not intentionally
 saved as audio/transcript files or sent to the publisher. Up to ten completed
 takes can be retained during the session. Clear removes the app's transcript
@@ -62,6 +70,12 @@ The installer presents the licence and this notice, then optionally configures
 speech/downloads using the same verified manager as the app. Setup progress may
 show download metadata. Optional installer/operating-system diagnostics can exist
 locally. Neither installation nor uninstall sends those diagnostics to Hangry Labs.
+The Offline installer also includes Microsoft's standalone WebView2 installer,
+used only if that required runtime is missing, after accepting its separate terms.
+No online runtime bootstrapper is used. WebView2 can collect and send information
+to Microsoft, includes Microsoft Defender SmartScreen, and updates automatically
+when online under Microsoft's terms and privacy statement: https://aka.ms/privacy
+and https://learn.microsoft.com/en-us/microsoft-edge/privacy-whitepaper#smartscreen.
 Uninstall preserves settings/models. You may deliberately remove the data folder
 and any separately configured token file when you no longer need them.
 The installer's Fresh settings option renames existing settings and WebView2
