@@ -14,8 +14,8 @@ jobs:
         run: |
           import pathlib, re, subprocess
           names = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
-          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|assets/screenshots/(dictate|connection)\.webp|assets/demo/listen2me-demo\.(webp|mp4)|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
-          media = re.compile(r'assets/(screenshots/(dictate|connection)\.webp|demo/listen2me-demo\.(webp|mp4))')
+          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|assets/branding/listen2me-horizontal\.webp|assets/screenshots/(dictate|connection)\.webp|assets/demo/listen2me-demo\.(webp|mp4)|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
+          media = re.compile(r'assets/(branding/listen2me-horizontal\.webp|screenshots/(dictate|connection)\.webp|demo/listen2me-demo\.(webp|mp4))')
           private = re.compile(r'BEGIN [A-Z ]*PRIVATE KEY|github' + r'_pat_|\bgh[pousr]_[A-Za-z0-9]{20}|\bhf_[A-Za-z0-9]{20}|[CX]:[/\\]sandbox|192\.168\.0\.', re.I)
           for name in filter(None, names):
               assert allowed.fullmatch(name), f'Unexpected public file: {name}'
