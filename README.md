@@ -26,22 +26,15 @@ Screenshots were captured during development; small details may change between b
 
 ## Downloads
 
-Find installers and version-specific notes on the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
-Routine updates contain the small standard installer. Selected milestone releases
-also include the offline package; find the newest offline package in the
-[release history](https://github.com/hangry-labs/Listen2Me/releases). Choose one installer:
+Download **`Listen2Me-Setup.exe`** from the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
+Configure hosted recognition or explicitly download your preferred local model.
+The installer runs per user and preserves existing settings and downloaded models.
+It is also the normal in-app update package.
 
-- **`Listen2Me-Setup.exe`**: small standard download; configure hosted recognition
-  or explicitly download your preferred model. This is also the normal update.
-- **`Listen2Me-Setup-Offline-Parakeet.exe`**: includes Parakeet TDT v3 Q8 and its
-  CPU runtime for installation from a USB drive without a model download. It also
-  includes Microsoft's standalone WebView2 installer if that prerequisite is absent.
-
-Both install the same app per user and preserve existing settings/models. The
-offline installer is not a portable app; it installs on the target PC. New offline
-setups select CPU transcription automatically. Parakeet transcribes completed
-takes, supports 25 European languages, and does not provide live preview. Optional
-CUDA support and other models can be downloaded later.
+Current beta releases provide the standard installer only; an offline bundle is
+not currently published. Once downloaded, local models work without an inference
+server or internet connection. Optional models and CUDA runtimes require their
+initial download.
 
 No Git checkout or development tools are required. Preview releases may change frequently.
 
@@ -56,7 +49,7 @@ available to the in-app updater; that channel name does not imply a mature 1.0
 release. Review the release notes before installing.
 
 Requires Windows 10 version 1809 or newer / Windows 11, x64, a microphone and
-Microsoft WebView2 Runtime (bundled in the offline installer). The installer runs per user without administrator
+Microsoft WebView2 Runtime. The installer runs per user without administrator
 rights. Windows on ARM and non-Windows operating systems have not been qualified.
 
 ## Choose your speech recognition
