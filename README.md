@@ -108,8 +108,10 @@ release/discard help sits below it; About & legal has a separate tab.
 The footer shows your selected ASR and local loading/residency state. Hosted
 server memory is controlled by the provider and cannot be inferred from a
 successful connection. Click the version to open releases, or its circular
-refresh icon to check for updates. Settings → Application updates offers an explicit check, verified
-download and Install & restart action once stable releases are published.
+refresh icon to check for updates. The footer offers an explicit check, verified download and Install action.
+Install starts the verified installer and restarts Listen2Me without switching
+tabs. Pending valid changes are saved first; correct invalid changes before
+installing.
 Listen2Me never checks or installs app updates automatically. Routine updates use
 the small standard installer, retaining previously installed models, including
 Parakeet from the offline edition. Microsoft's WebView2 Runtime has its own
@@ -153,3 +155,8 @@ limits; longer capture does not override them. One hour of mono audio uses about
 discards a take; reaching the configured limit finishes it. The selected
 microphone is enumerated without opening it until you use your shortcut.
 Listen2Me's own feedback field can also receive dictation.
+
+Settings also saves automatically after a short pause. A pending dot and floating
+Saved confirmation show progress; failed or invalid edits stay in the form.
+Timing options share a row and their info buttons explain limits. Hold/Toggle
+help is beside the recording-mode switch on Dictate.
