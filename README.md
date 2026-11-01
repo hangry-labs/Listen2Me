@@ -103,7 +103,7 @@ and uninstall. Local models load and stay ready by default without opening the
 microphone. Settings can instead load on demand and unload after a chosen idle
 period, or after each take. Pause in the tray releases the worker. The voice card
 groups model, processing location, waveform, Hold/Toggle and the shortcut. Its
-release/discard help sits below it; About & legal has a separate tab.
+release/discard help sits below it; About has a separate tab.
 
 The footer shows your selected ASR and local loading/residency state. Hosted
 server memory is controlled by the provider and cannot be inferred from a
@@ -160,3 +160,15 @@ Settings also saves automatically after a short pause. A pending dot and floatin
 Saved confirmation show progress; failed or invalid edits stay in the form.
 Timing options share a row and their info buttons explain limits. Hold/Toggle
 help is beside the recording-mode switch on Dictate.
+
+Use Settings → Restore defaults to reset shortcut, timing, checkbox and model
+readiness options. Your selected model, endpoint, microphone and downloaded files
+are kept. Out-of-range numeric values are highlighted with their allowed ranges
+and stay unsaved until corrected. The startup preference enables the shortcut
+when the app opens; it never starts recording. With Keep ready, an enabled local
+model may preload without opening the microphone.
+
+The About tab contains contacts and legal documents. Support Us opens the
+compact project card; Send feedback opens the optional form and retains drafts
+when closed or when delivery fails. Privacy first. Local by choice: hosted
+recognition still sends audio to the endpoint you select.
