@@ -84,7 +84,7 @@ Downloaded models and external token files are preserved. These local backups
 remain until you remove them; they may contain your prior settings/browser data.
 
 OPTIONAL FEEDBACK
-The Support tab can submit the message you write, its feedback type, app version,
+The Support Us feedback form can submit the message you write, its feedback type, app version,
 Windows platform identifier and an optional reply email to the Hangry Labs website.
 No account or reply email is required. Recordings, transcripts, endpoint settings,
 token files and diagnostic attachments are not included. Do not put secrets into
@@ -94,10 +94,12 @@ notice. A successful submission is confirmed by the receiving website; failed
 submissions remain in the form during this app session and are not retried
 automatically. This is optional communication, not anonymous network transport.
 
-USER-REQUESTED APPLICATION UPDATES
-Check for updates contacts GitHub's Listen2Me release feed only when you click it.
-No startup or scheduled checks are performed. GitHub/CDNs receive your IP address
-and ordinary request metadata. Download update saves an installer locally under
+APPLICATION UPDATE CHECKS AND USER-CONTROLLED INSTALLATION
+By default, opening Listen2Me checks GitHub's official Listen2Me release feed
+once for a newer version. You can disable this startup check in Settings and
+check manually using the footer refresh button. No periodic check or automatic
+retry loop is scheduled. GitHub/CDNs receive your IP address
+and ordinary request metadata. Only choosing Download update saves an installer locally under
 LOCALAPPDATA/Listen2Me/updates, checks its size, checksum, publisher signature and
 version. Install & restart pauses dictation, starts setup, and closes/reopens the
 app. Normal updates preserve settings/models. An installer is never started just
@@ -110,7 +112,8 @@ This app notice does not describe the Hangry Labs website's hosting logs.
 For questions or privacy requests: contact@hangrylabs.app
 The app's About links open your browser or email application only when clicked.
 These external applications and destinations then apply their own policies.
-This release does not automatically check for or download application updates.
+Startup checks contact GitHub when enabled. Application installers are never
+downloaded or installed automatically.
 GitHub hosts public installers, documentation and release notes. Visiting those
 pages or downloading an installer exposes ordinary request metadata to GitHub
 and its delivery providers, separate from local dictation.

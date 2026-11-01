@@ -112,7 +112,9 @@ refresh icon to check for updates. The footer offers an explicit check, verified
 Install starts the verified installer and restarts Listen2Me without switching
 tabs. Pending valid changes are saved first; correct invalid changes before
 installing.
-Listen2Me never checks or installs app updates automatically. Routine updates use
+Listen2Me checks for a newer version on opening by default; turn this off in
+Settings for manual-only checks. It never downloads or installs app updates
+automatically. Routine updates use
 the small standard installer, retaining previously installed models, including
 Parakeet from the offline edition. Microsoft's WebView2 Runtime has its own
 automatic-update and SmartScreen behavior when online. The installer preserves settings and
@@ -156,7 +158,7 @@ discards a take; reaching the configured limit finishes it. The selected
 microphone is enumerated without opening it until you use your shortcut.
 Listen2Me's own feedback field can also receive dictation.
 
-Settings also saves automatically after a short pause. A pending dot and floating
+Settings also saves automatically after a short pause. A pending-only dot and floating
 Saved confirmation show progress; failed or invalid edits stay in the form.
 Timing options share a row and their info buttons explain limits. Hold/Toggle
 help is beside the recording-mode switch on Dictate.
@@ -172,3 +174,11 @@ The About tab contains contacts and legal documents. Support Us opens the
 compact project card; Send feedback opens the optional form and retains drafts
 when closed or when delivery fails. Privacy first. Local by choice: hosted
 recognition still sends audio to the endpoint you select.
+
+Startup checks request only the official GitHub release metadata; GitHub sees
+ordinary connection information such as your IP address. There is no automatic
+installer download, installation or background retry loop. You choose whether
+and when to update. Hangry Labs does not receive publisher analytics, usage
+profiles or automatic uploads of recordings/transcripts. Optional feedback and
+third-party download/hosted-ASR connections are described in the privacy notice
+and the Support Us page.
