@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.0.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.1.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
