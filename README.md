@@ -97,10 +97,27 @@ The default shortcut is **Ctrl + Shift**; change it in Settings.
   transcript remains in Your words for recovery.
 
 Select your destination text field first and keep it selected. Listen2Me does not
-restore an earlier window or press Enter for you. It cannot reliably distinguish
+restore an earlier window. Enter is sent only if you enable a custom phrase for it.
+It cannot reliably distinguish
 all internal text fields in every editor. Review the result before sending it.
 Cancelling stops further work; it does not remove text already typed or recall
 audio already received by a hosted server.
+
+## Custom phrases
+
+In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
+or **Enter** action. For example, “my page” can write your website address.
+Rules are saved on your computer and can be edited, disabled or removed.
+
+Use distinctive commands such as **“hashtag new line”** for Shift+Enter and
+**“hashtag enter”** for Enter, with any wording in your language. These examples
+are not enabled automatically. If your model writes “hashtag” as `#`, add that
+spelling separately. Matching ignores case and uses whole words.
+
+Shift+Enter usually adds a line break; Enter can send a message or submit a form.
+The receiving app decides. With live writing, actions may happen before you finish
+speaking and cancellation cannot undo them. Unfinished phrases stay buffered;
+late revisions stop further insertion instead of replaying an action.
 
 ## Privacy and updates
 
