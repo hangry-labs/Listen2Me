@@ -76,9 +76,11 @@ The installer presents the licence and this notice, then optionally configures
 speech/downloads using the same verified manager as the app. Setup progress may
 show download metadata. Optional installer/operating-system diagnostics can exist
 locally. Neither installation nor uninstall sends those diagnostics to Hangry Labs.
-The Offline installer also includes Microsoft's standalone WebView2 installer,
-used only if that required runtime is missing, after accepting its separate terms.
-No online runtime bootstrapper is used. WebView2 can collect and send information
+If Microsoft WebView2 is missing, the standard installer offers to download its
+standalone installer directly from Microsoft and install it after you accept
+Microsoft's separate terms. The Offline installer carries the same prerequisite
+and does not download it. Both verify the reviewed file's SHA-256 before running
+it. Existing WebView2 installations are left alone. WebView2 can collect and send information
 to Microsoft, includes Microsoft Defender SmartScreen, and updates automatically
 when online under Microsoft's terms and privacy statement: https://aka.ms/privacy
 and https://learn.microsoft.com/en-us/microsoft-edge/privacy-whitepaper#smartscreen.

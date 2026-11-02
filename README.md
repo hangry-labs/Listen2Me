@@ -52,6 +52,12 @@ Requires Windows 10 version 1809 or newer / Windows 11, x64, a microphone and
 Microsoft WebView2 Runtime. The installer runs per user without administrator
 rights. Windows on ARM and non-Windows operating systems have not been qualified.
 
+If WebView2 is missing, setup offers to download Microsoft's runtime (about
+206 MiB) and install it after you accept Microsoft's licence. Existing runtimes
+are left alone. A cancelled or failed prerequisite download stops setup before
+Listen2Me files are changed. Downloaded speech models are a separate choice.
+
+
 ## Choose your speech recognition
 
 The optional installation wizard can configure a hosted ASR endpoint or explicitly
