@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.3.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.11.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -73,7 +73,11 @@ download a local model. You can also set this up later inside the app.
 
 With the standard installer, model/runtime downloads are optional and substantially larger than the installer.
 The Model Wizard shows download sizes, progress and supported acceleration before
-use. Local GPU runtimes are downloaded separately when selected. Model licences
+use. Model cards distinguish downloaded, partially downloaded and missing files,
+with separate CPU/GPU runtime status. Interrupted downloads retry automatically
+with a bounded backoff and retain partial progress for a later retry, including
+after restarting the app. Servers that do not support resuming restart that file.
+Every completed download is checked against its pinned SHA-256 before use. Local GPU runtimes are downloaded separately when selected. Model licences
 and attribution remain in their downloaded folders.
 
 Hosted recognition supports compatible OpenAI-style transcription APIs and Qwen
