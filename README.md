@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.13.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.14.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -115,8 +115,8 @@ audio already received by a hosted server.
 Hesitation-sound cleanup is enabled by default. It removes standalone "uh",
 "uhh", "uhm", "umm" and stretched variants from dictation, live preview and
 retained text. Turn off **Remove hesitation sounds** in Settings to keep them.
-Bare "um" is removed only when English is explicitly selected; Auto preserves
-it because it is a real word in other languages. Ordinary words such as "oh",
+Bare "um" is removed in Auto or English mode, including between spaces. An
+explicitly selected non-English language keeps it because it can be a real word. Ordinary words such as "oh",
 "ah", "like" and "well", identifiers and custom replacement text stay intact.
 Cleanup does not turn a newly joined phrase into a keyboard command.
 
