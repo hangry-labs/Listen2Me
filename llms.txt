@@ -1,0 +1,17 @@
+---
+layout: null
+---
+# Listen2Me
+
+> Free Windows desktop dictation from Hangry Labs. Choose local speech recognition or a compatible ASR endpoint.
+
+- [Downloads and setup]({{ '/#downloads' | absolute_url }}): Windows x64 installation, model downloads and beta signing information.
+- [Speech models]({{ '/#choose-your-speech-recognition' | absolute_url }}): CPU, supported NVIDIA acceleration and hosted recognition.
+- [Controls]({{ '/#controls' | absolute_url }}): Hold, toggle, hands-free and cancellation shortcuts.
+- [Custom phrases]({{ '/#custom-phrases' | absolute_url }}): Presets and alternative wordings for text and explicit key actions.
+- [Privacy]({{ '/#privacy-and-updates' | absolute_url }}): Audio destinations, session history and update behavior.
+- [Official product website](https://listen2me.hangrylabs.app/).
+- [GitHub releases](https://github.com/hangry-labs/Listen2Me/releases).
+- [Software licence]({{ '/LICENSE.txt' | absolute_url }}).
+
+Local recognition works offline after model/runtime downloads. Hosted recognition sends audio to the chosen provider. The application is proprietary and free to use. No public account or inference service is hosted by this static website.

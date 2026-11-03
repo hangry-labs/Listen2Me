@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | escape }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0c1013">
+  <meta name="application-name" content="Listen2Me">
+  {% if page.sitemap == false %}<meta name="robots" content="noindex,follow">{% else %}<meta name="robots" content="index,follow,max-image-preview:large">{% endif %}
+  {% seo %}
+  <meta property="og:image:alt" content="{{ site.data.listen2me.art_alt | escape }}">
+  <meta name="twitter:image:alt" content="{{ site.data.listen2me.art_alt | escape }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/site/theme/assets/listen2me-pages/favicon.png' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ '/assets/listen2me.svg' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="192x192" href="{{ '/site/theme/assets/listen2me-pages/favicon.png' | relative_url }}">
+  <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | absolute_url }}">
+  <link rel="describedby" type="text/plain" href="{{ '/llms.txt' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/site/theme/assets/listen2me-pages/theme.css' | relative_url }}">
+  <script defer src="{{ '/site/theme/assets/listen2me-pages/site.js' | relative_url }}"></script>
+  {% if page.homepage %}
+  <script type="application/ld+json">{
+    "@context":"https://schema.org", "@type":"SoftwareApplication",
+    "@id":"https://listen2me.hangrylabs.app/#app", "name":"Listen2Me",
+    "url":"https://listen2me.hangrylabs.app/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Windows 10 (1809+), Windows 11, x64",
+    "downloadUrl":"https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe",
+    "image":{{ '/assets/branding/listen2me-horizontal.webp' | absolute_url | jsonify }},
+    "license":"https://github.com/hangry-labs/Listen2Me/blob/main/LICENSE.txt",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "publisher":{"@type":"Organization","name":"Hangry Labs","url":"https://hangrylabs.app/"}
+  }</script>
+  {% endif %}
+</head>
+<body>
+  {% assign product = site.data.listen2me %}
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar"><div class="wrap topbar-inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}"><img src="{{ '/assets/listen2me.svg' | relative_url }}" width="28" height="28" alt="">Listen<span>2</span>Me</a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a href="{{ '/#controls' | relative_url }}">Controls</a>
+      <a href="{{ '/#custom-phrases' | relative_url }}">Phrases</a>
+      <a href="{{ '/#privacy-and-updates' | relative_url }}">Privacy</a>
+      <a href="https://github.com/hangry-labs/Listen2Me">GitHub</a>
+    </nav>
+    <div class="topbar-tools"><a class="button small" href="https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe">Download</a></div>
+  </div></header>
+  <main id="main" tabindex="-1">
+    {% if page.homepage %}
+    <section class="hero" aria-labelledby="product-title">
+      <img class="hero-art" src="{{ '/assets/branding/listen2me-horizontal.webp' | relative_url }}" srcset="{{ '/site/theme/assets/listen2me-pages/hero-480.webp' | relative_url }} 480w, {{ '/site/theme/assets/listen2me-pages/hero-960.webp' | relative_url }} 960w, {{ '/assets/branding/listen2me-horizontal.webp' | relative_url }} 1400w" sizes="(max-width:1000px) 100vw, 1100px" width="1400" height="467" alt="{{ product.art_alt | escape }}" fetchpriority="high">
+      <div class="wrap hero-copy">
+        <p class="eyebrow">Windows x64 <span aria-hidden="true">/</span> Beta · free to use</p>
+        <h1 id="product-title">Listen<span>2</span>Me</h1>
+        <p class="tagline">{{ product.tagline | escape }}</p>
+        <p class="lead">{{ product.summary | escape }}</p>
+        <div class="actions"><a class="button" href="https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe">Download for Windows</a><a class="text-link" href="#downloads">Installation guide</a><a class="text-link" href="https://github.com/hangry-labs/Listen2Me/releases">Release notes</a></div>
+        <p class="download-note">Windows x64 · Self-signed beta. Windows may show a publisher warning.</p>
+      </div>
+    </section>
+    {% endif %}
+    <div class="wrap docs-shell{% unless page.homepage %} docs-shell--solo{% endunless %}">
+      {% if page.homepage %}
+      <aside class="section-sidebar" aria-label="On this page"><details open><summary>On this page</summary><nav aria-label="Guide sections">
+        <a href="#see-it-in-action">See it in action</a><a href="#downloads">Downloads and setup</a><a href="#choose-your-speech-recognition">Speech models</a><a href="#controls">Shortcuts and controls</a><a href="#optional-speech-cleanup">Speech cleanup</a><a href="#custom-phrases">Custom phrases</a><a href="#privacy-and-updates">Privacy and updates</a><a href="#contact">Feedback and support</a>
+      </nav></details></aside>
+      {% endif %}
+      <article class="readme-content">
+        {% if page.homepage %}
+          {% assign sections = content | split: '<h2 id="see-it-in-action">See it in action</h2>' %}
+          {% if sections.size > 1 %}<h2 id="see-it-in-action">See it in action</h2>{{ sections | last }}{% else %}{{ content }}{% endif %}
+        {% else %}{{ content }}{% endif %}
+      </article>
+    </div>
+  </main>
+  <footer><div class="wrap footer-top"><a class="wordmark" href="https://hangrylabs.app/">Hangry Labs</a><nav aria-label="Product links"><a href="https://listen2me.hangrylabs.app/">Product website</a><a href="https://github.com/hangry-labs/Listen2Me">GitHub</a><a href="{{ '/LICENSE.txt' | relative_url }}">Licence</a><a href="{{ '/PRIVACY.txt' | relative_url }}">Privacy notice</a><a href="mailto:support@hangrylabs.app">Support</a></nav></div><div class="wrap footer-bottom"><p>Free to use. Local by choice. Your words stay yours.</p></div></footer>
+  <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+</body>
+</html>

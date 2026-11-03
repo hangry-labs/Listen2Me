@@ -1,0 +1,7 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for document in site.pages %}{% if document.url == '/' or document.url contains '.html' %}{% unless document.sitemap == false %}<url><loc>{{ document.url | absolute_url | xml_escape }}</loc></url>{% endunless %}{% endif %}{% endfor %}
+</urlset>

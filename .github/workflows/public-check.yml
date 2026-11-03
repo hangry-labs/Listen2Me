@@ -14,8 +14,8 @@ jobs:
         run: |
           import pathlib, re, subprocess
           names = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
-          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|assets/branding/listen2me-horizontal\.webp|assets/screenshots/(dictate|connection)\.webp|assets/demo/listen2me-demo\.(webp|mp4)|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md)')
-          media = re.compile(r'assets/(branding/listen2me-horizontal\.webp|screenshots/(dictate|connection)\.webp|demo/listen2me-demo\.(webp|mp4))')
+          allowed = re.compile(r'(README\.md|LICENSE\.txt|PRIVACY\.txt|THIRD_PARTY_NOTICES\.txt|SECURITY\.md|\.gitignore|assets/listen2me\.svg|assets/branding/listen2me-horizontal\.webp|assets/screenshots/(dictate|connection)\.webp|assets/demo/listen2me-demo\.(webp|mp4)|\.github/workflows/public-check\.yml|releases/\d+\.\d+\.\d+\.md|_config\.yml|_data/listen2me\.json|robots\.txt|sitemap\.xml|llms\.txt|404\.html|site/(Dockerfile|Gemfile|Gemfile\.lock|README\.md)|site/theme/_layouts/default\.html|site/theme/assets/listen2me-pages/(theme\.css|site\.js|favicon\.png|demo-poster\.webp|hero-(480|960)\.webp))')
+          media = re.compile(r'(assets/(branding/listen2me-horizontal\.webp|screenshots/(dictate|connection)\.webp|demo/listen2me-demo\.(webp|mp4))|site/theme/assets/listen2me-pages/(favicon\.png|demo-poster\.webp|hero-(480|960)\.webp))')
           private = re.compile(r'BEGIN [A-Z ]*PRIVATE KEY|github' + r'_pat_|\bgh[pousr]_[A-Za-z0-9]{20}|\bhf_[A-Za-z0-9]{20}|[CX]:[/\\]sandbox|192\.168\.0\.', re.I)
           for name in filter(None, names):
               assert allowed.fullmatch(name), f'Unexpected public file: {name}'
@@ -27,6 +27,8 @@ jobs:
                   assert 16 <= len(data) <= (10 if video else 2) * 1024 * 1024, f'Invalid media size: {name}'
                   if video:
                       assert data[4:8] == b'ftyp', f'Invalid MP4 header: {name}'
+                  elif p.suffix == '.png':
+                      assert data[:8] == b'\x89PNG\r\n\x1a\n' and data[12:16] == b'IHDR' and int.from_bytes(data[16:20], 'big') == 192 and int.from_bytes(data[20:24], 'big') == 192, f'Invalid PNG favicon: {name}'
                   else:
                       assert data[:4] == b'RIFF' and data[8:12] == b'WEBP' and int.from_bytes(data[4:8], 'little') == len(data) - 8, f'Invalid WebP header: {name}'
                   continue
@@ -36,3 +38,9 @@ jobs:
           assert 'contact@hangrylabs.app' in pathlib.Path('README.md').read_text(encoding='utf-8')
           for asset in re.findall(r'\]\((assets/[^)]+)\)', pathlib.Path('README.md').read_text(encoding='utf-8')):
               assert pathlib.Path(asset).is_file(), f'Missing README media: {asset}'
+
+          for name in ('_config.yml', 'site/theme/_layouts/default.html', 'site/theme/assets/listen2me-pages/theme.css', 'site/theme/assets/listen2me-pages/site.js', 'robots.txt', 'sitemap.xml', 'llms.txt'):
+              assert pathlib.Path(name).is_file(), f'Missing website file: {name}'
+          config = pathlib.Path('_config.yml').read_text(encoding='utf-8')
+          assert 'baseurl: /Listen2Me' in config and 'url: https://hangry-labs.github.io' in config
+          assert 'releases' in config and 'site/Gemfile.lock' in config

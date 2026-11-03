@@ -1,0 +1,62 @@
+title: Listen2Me
+description: Free, private Windows voice typing. Download Listen2Me, choose a local speech model and learn its shortcuts, custom phrases and privacy controls.
+url: https://hangry-labs.github.io
+baseurl: /Listen2Me
+repository: hangry-labs/Listen2Me
+lang: en
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+theme: null
+layouts_dir: site/theme/_layouts
+plugins:
+  - jekyll-seo-tag
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+relative_links:
+  enabled: true
+  collections: true
+readme_index:
+  enabled: true
+  remove_originals: true
+  with_frontmatter: true
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+      image: /assets/branding/listen2me-horizontal.webp
+  - scope:
+      path: README.md
+    values:
+      homepage: true
+      title: Listen2Me downloads and guide
+      description: Private voice typing for Windows, free to use. Download Listen2Me and learn local speech models, push-to-talk, hands-free dictation and custom phrases.
+exclude:
+  - AGENTS.md
+  - .ai
+  - .gitignore
+  - .github
+  - .idea
+  - .jekyll-cache
+  - .jekyll-metadata
+  - .sass-cache
+  - build
+  - release
+  - releases
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - site/Dockerfile
+  - site/Gemfile
+  - site/Gemfile.lock
+  - site/README.md

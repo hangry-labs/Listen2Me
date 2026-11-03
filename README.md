@@ -4,6 +4,8 @@
 
 **Speak your mind. Right where you are.**
 
+[Download for Windows](https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe) · [Project guide](https://hangry-labs.github.io/Listen2Me/) · [Product website](https://listen2me.hangrylabs.app/)
+
 Listen2Me is a free Windows desktop dictation app from Hangry Labs. Hold your
 shortcut or go hands-free, speak into your microphone, and have the recognised
 text typed into the text field you selected.
