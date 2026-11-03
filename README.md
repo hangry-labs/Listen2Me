@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.14.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.15.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -125,6 +125,12 @@ Cleanup does not turn a newly joined phrase into a keyboard command.
 In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
 or **Enter** action. For example, “my page” can write your website address.
 Rules are saved on your computer and can be edited, disabled or removed.
+
+Choose a named preset for each game, project or situation. Only the selected set
+is active. Create, rename, duplicate or delete sets in the Phrases tab; your
+existing phrases are kept in **Default**. Selection and edits save automatically.
+Switching presets is manual and available between takes. You can keep up to
+20 presets with up to 50 phrases in each set.
 
 Use distinctive commands such as **“hashtag new line”** for Shift+Enter and
 **“hashtag enter”** for Enter, with any wording in your language. These examples
