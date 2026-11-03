@@ -137,17 +137,22 @@ commas, as in “today, oh did…” becoming “today, did…”.
 
 ## Spelling names
 
-In **Phrases**, enable **Join spelled names** to use the optional command. It is
-off by default. Say “spell name A D A M”, “spell name A-D-A-M” or “spell name ADAM”
-to write **Adam**. Mixed spaces and hyphens are supported. Change the command to
-your own wording; it saves locally and applies across phrase presets.
+In **Phrases → Add phrase**, enter a command such as “spell name” under **When I
+say**, then select **Join spelled names** under **Then**. No replacement text is
+needed. Add alternative wordings if you like. The spelling rule can be enabled,
+disabled or removed like any other phrase, and only the selected preset is active.
 
-Say one name per command. A normal following word or punctuation ends an isolated
-letter sequence. Names receive an initial capital. The app joins the text your
-speech model returns; it cannot recover letters the model mishears or decode
-phonetic words such as alpha and bravo. Quoted commands and custom replacement
-text stay literal. During live writing, a spelling sequence stays buffered until
-the name is complete. This formatting uses no additional AI or network service.
+Say “spell name A D A M”, “spell name A-D-A-M” or “spell name ADAM” to write **Adam**.
+Mixed spaces and hyphens are supported. Say one name per command. A normal
+following word or punctuation ends an isolated letter sequence. Names receive
+an initial capital. The app joins the text your speech model returns; it cannot
+recover letters the model mishears or decode phonetic words such as alpha and
+bravo. Quoted commands and custom replacement text stay literal. Live writing
+buffers a spelling sequence until the name is complete. This formatting uses no
+additional AI or network service.
+
+The older separate spelling option is migrated into phrase rules when upgrading.
+Existing explicit phrases with the same wording are kept.
 
 ## Custom phrases
 
