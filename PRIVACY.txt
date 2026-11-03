@@ -1,5 +1,5 @@
 LISTEN2ME - PRIVACY AND DATA USE
-Version: 2026-11-01
+Version: 2026-11-03
 
 Listen2Me does not include publisher-operated analytics, advertising, account
 registration, remote microphone monitoring, or an automatic upload of recordings,
@@ -72,6 +72,12 @@ a general typing history or read destination field contents. It simulates text
 input, so text can already be present in the receiving app when you cancel.
 
 INSTALLATION AND REMOVAL
+Start with Windows is optional and off by default. Enabling it registers this
+app locally for your Windows account and opens it in the system tray at sign-in.
+It does not start recording. Shortcut arming and local model loading follow
+their separate settings. Disabling it removes the registration, and uninstall
+removes the app's startup entry. Windows may independently block startup.
+
 The installer presents the licence and this notice, then optionally configures
 speech/downloads using the same verified manager as the app. Setup progress may
 show download metadata. Optional installer/operating-system diagnostics can exist

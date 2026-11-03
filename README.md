@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.12.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.13.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -110,6 +110,16 @@ all internal text fields in every editor. Review the result before sending it.
 Cancelling stops further work; it does not remove text already typed or recall
 audio already received by a hosted server.
 
+## Optional speech cleanup
+
+Hesitation-sound cleanup is enabled by default. It removes standalone "uh",
+"uhh", "uhm", "umm" and stretched variants from dictation, live preview and
+retained text. Turn off **Remove hesitation sounds** in Settings to keep them.
+Bare "um" is removed only when English is explicitly selected; Auto preserves
+it because it is a real word in other languages. Ordinary words such as "oh",
+"ah", "like" and "well", identifiers and custom replacement text stay intact.
+Cleanup does not turn a newly joined phrase into a keyboard command.
+
 ## Custom phrases
 
 In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
@@ -133,6 +143,15 @@ directly to your chosen server. There is no built-in publisher analytics,
 advertising or automatic upload of recordings/transcripts to Hangry Labs.
 Session history is kept in process memory. Windows paging/crash dumps and the
 receiving application's own saving behavior are separate.
+
+The optional **Start with Windows** setting is off by default. It opens Listen2Me
+in the tray when you sign in. Shortcut arming and model readiness remain separate;
+it does not start recording. Uninstall removes the app's startup entry. Windows
+may independently disable startup in Startup apps or Task Manager.
+
+Locking or sleeping cancels the current take. Previously enabled shortcuts
+recover after returning to the normal desktop and releasing their keys; manually
+paused dictation stays paused. Recovery never resumes the interrupted recording.
 
 Settings/models normally live in `%LOCALAPPDATA%/Listen2Me` and survive upgrades
 and uninstall. Local models load and stay ready by default without opening the
