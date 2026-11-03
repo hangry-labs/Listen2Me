@@ -124,11 +124,16 @@ identifiers and custom replacement text stay intact. Cleanup runs locally after
 transcription, without sending your text to another AI.
 Cleanup does not turn a newly joined phrase into a keyboard command.
 
-Use the **+** beside **Remove hesitation sounds** to add your own filler words
-or short phrases. Remove them individually in the same editor. The list saves
-on your computer and applies to your selected language; the main switch controls
-both built-in and extra fillers. Quoted text and literal phrase replacements
-are preserved. Restoring preference defaults keeps your personal filler list.
+Use the **+** beside **Remove hesitation sounds** to switch built-in sounds on or
+off and add your own filler words or short phrases. Remove additions individually
+or use **Restore defaults** to reset this list. The list saves on your computer;
+the main switch controls both built-in and extra fillers. Quoted text and literal
+phrase replacements are preserved. Restoring general preference defaults keeps
+your personal filler list; the filler editor has its own confirmed reset.
+
+Removing a filler at a sentence start capitalizes the next word: “Oh, yesterday…”
+becomes “Yesterday…”. Mid-sentence removals preserve casing and existing clause
+commas, as in “today, oh did…” becoming “today, did…”.
 
 ## Custom phrases
 
