@@ -124,6 +124,12 @@ identifiers and custom replacement text stay intact. Cleanup runs locally after
 transcription, without sending your text to another AI.
 Cleanup does not turn a newly joined phrase into a keyboard command.
 
+Use the **+** beside **Remove hesitation sounds** to add your own filler words
+or short phrases. Remove them individually in the same editor. The list saves
+on your computer and applies to your selected language; the main switch controls
+both built-in and extra fillers. Quoted text and literal phrase replacements
+are preserved. Restoring preference defaults keeps your personal filler list.
+
 ## Custom phrases
 
 In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
