@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.16.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.17.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -125,6 +125,9 @@ Cleanup does not turn a newly joined phrase into a keyboard command.
 In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
 or **Enter** action. For example, “my page” can write your website address.
 Rules are saved on your computer and can be edited, disabled or removed.
+Use **Add wording** inside a rule to map different ways of saying something to
+the same result. A rule can have up to 20 wordings, each matched as a literal
+whole phrase. Editing the shared result updates all of them.
 
 Choose a named preset for each game, project or situation. Only the selected set
 is active. Create, rename, duplicate or delete sets in the Phrases tab; your
