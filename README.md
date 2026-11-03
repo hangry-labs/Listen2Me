@@ -117,9 +117,11 @@ audio already received by a hosted server.
 Hesitation-sound cleanup is enabled by default. It removes standalone "uh",
 "uhh", "uhm", "umm" and stretched variants from dictation, live preview and
 retained text. Turn off **Remove hesitation sounds** in Settings to keep them.
-Bare "um" is removed in Auto or English mode, including between spaces. An
-explicitly selected non-English language keeps it because it can be a real word. Ordinary words such as "oh",
-"ah", "like" and "well", identifiers and custom replacement text stay intact.
+Standalone "oh" and "um" are removed in Auto or English mode, including between
+spaces. An explicitly selected non-English language keeps them because they can
+be meaningful words. Quoted text, words such as "Ohio", "ah", "like" and "well",
+identifiers and custom replacement text stay intact. Cleanup runs locally after
+transcription, without sending your text to another AI.
 Cleanup does not turn a newly joined phrase into a keyboard command.
 
 ## Custom phrases
@@ -127,6 +129,8 @@ Cleanup does not turn a newly joined phrase into a keyboard command.
 In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
 or **Enter** action. For example, “my page” can write your website address.
 Rules are saved on your computer and can be edited, disabled or removed.
+To remove your own filler words, choose **Replacement text** and leave **Write**
+empty. For example, map your personal thinking phrase to nothing.
 Use **Add wording** inside a rule to map different ways of saying something to
 the same result. A rule can have up to 20 wordings, each matched as a literal
 whole phrase. Editing the shared result updates all of them.
