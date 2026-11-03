@@ -11,7 +11,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.11.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.12.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -60,8 +60,11 @@ Listen2Me files are changed. Downloaded speech models are a separate choice.
 
 ## Choose your speech recognition
 
-The optional installation wizard can configure a hosted ASR endpoint or explicitly
-download a local model. You can also set this up later inside the app.
+The installation wizard can configure a hosted ASR endpoint or download a local
+model. New interactive installations select the recommended Parakeet model by
+default; choose another model, your own server, or Set up later before continuing.
+Updates and repairs preserve existing speech settings. You can also change your
+setup later inside the app.
 
 - **Parakeet TDT v3 Q8:** recommended multilingual completed-take dictation, CPU
   or a compatible NVIDIA CUDA GPU.
