@@ -13,7 +13,7 @@ text typed into the text field you selected.
 This repository contains public documentation, artwork and downloadable release
 assets. The application is proprietary; its source is maintained separately.
 
-**Now in beta: 0.7.17.** Free to use, with local speech recognition or your own
+**Now in beta: 0.7.24.** Free to use, with local speech recognition or your own
 hosted endpoint.
 
 ## See it in action
@@ -60,6 +60,18 @@ are left alone. A cancelled or failed prerequisite download stops setup before
 Listen2Me files are changed. Downloaded speech models are a separate choice.
 
 
+## Transcribe an audio file
+
+On **Dictate**, click **Transcribe audio file** below **Mic found** and choose a
+recording. Listen2Me uses your selected local model or speech server and places
+the transcript in **Your words**, ready to copy. It also appears in recent takes.
+Nothing is typed into another application automatically.
+
+Files can be up to **25 MB and 10 minutes**. WAV and MP3 are supported; other
+formats depend on the audio codecs available in Windows/WebView. You can cancel
+transcription, and a failed import keeps your previous takes. With a local model,
+file transcription works offline; a hosted endpoint receives the converted audio.
+
 ## Choose your speech recognition
 
 The installation wizard can configure a hosted ASR endpoint or download a local
