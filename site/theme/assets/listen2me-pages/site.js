@@ -3,7 +3,7 @@
 (() => {
   const root = document.querySelector('script[src$="/listen2me-pages/site.js"]')?.src;
   const base = root ? new URL('../../../../', root) : null;
-  const demo = document.querySelector('.readme-content img[src*="/assets/demo/listen2me-demo.webp"]');
+  const demo = document.querySelector('.readme-content img[src*="assets/demo/listen2me-demo.webp"]');
   if (demo && base) {
     const figure = document.createElement('figure');
     figure.className = 'dictation-demo';
