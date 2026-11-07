@@ -3,7 +3,7 @@
 (() => {
   const root = document.querySelector('script[src$="/listen2me-pages/site.js"]')?.src;
   const base = root ? new URL('../../../../', root) : null;
-  const demo = document.querySelector('.readme-content img[src$="/assets/demo/listen2me-demo.webp"]');
+  const demo = document.querySelector('.readme-content img[src*="/assets/demo/listen2me-demo.webp"]');
   if (demo && base) {
     const figure = document.createElement('figure');
     figure.className = 'dictation-demo';
@@ -13,8 +13,8 @@
     video.loop = true;
     video.playsInline = true;
     video.preload = 'none';
-    video.width = 1058;
-    video.height = 426;
+    video.width = 1748;
+    video.height = 956;
     video.poster = new URL('site/theme/assets/listen2me-pages/demo-poster.webp', base).href;
     video.setAttribute('aria-label', demo.alt);
     video.src = new URL('assets/demo/listen2me-demo.mp4', base).href;

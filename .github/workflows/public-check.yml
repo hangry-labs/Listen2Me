@@ -32,12 +32,13 @@ jobs:
                   else:
                       assert data[:4] == b'RIFF' and data[8:12] == b'WEBP' and int.from_bytes(data[4:8], 'little') == len(data) - 8, f'Invalid WebP header: {name}'
                   continue
+              assert b'\r\r\n' not in p.read_bytes(), f'Malformed doubled line endings: {name}'
               assert not private.search(p.read_text(encoding='utf-8')), f'Possible private content: {name}'
           for name in ('README.md', 'LICENSE.txt', 'PRIVACY.txt', 'SECURITY.md', 'THIRD_PARTY_NOTICES.txt'):
               assert pathlib.Path(name).is_file()
           assert 'contact@hangrylabs.app' in pathlib.Path('README.md').read_text(encoding='utf-8')
           for asset in re.findall(r'\]\((assets/[^)]+)\)', pathlib.Path('README.md').read_text(encoding='utf-8')):
-              assert pathlib.Path(asset).is_file(), f'Missing README media: {asset}'
+              assert pathlib.Path(asset.split('?', 1)[0]).is_file(), f'Missing README media: {asset}'
 
           for name in ('_config.yml', 'site/theme/_layouts/default.html', 'site/theme/assets/listen2me-pages/theme.css', 'site/theme/assets/listen2me-pages/site.js', 'robots.txt', 'sitemap.xml', 'llms.txt'):
               assert pathlib.Path(name).is_file(), f'Missing website file: {name}'
