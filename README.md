@@ -1,314 +1,198 @@
 # Listen2Me
 
-![Listen2Me by Hangry Labs — Speak your mind. Right where you are.](assets/branding/listen2me-horizontal.webp)
+![Listen2Me by Hangry Labs: Speak your mind. Right where you are.](assets/branding/listen2me-horizontal.webp)
 
 **Speak your mind. Right where you are.**
 
-[Download for Windows](https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe) · [Project guide](https://hangry-labs.github.io/Listen2Me/) · [Product website](https://listen2me.hangrylabs.app/)
+[Download for Windows](https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe) · [Product website](https://listen2me.hangrylabs.app/) · [User guide](https://hangry-labs.github.io/Listen2Me/)
 
-Listen2Me is a free Windows desktop dictation app from Hangry Labs. Hold your
-shortcut or go hands-free, speak into your microphone, and have the recognised
-text typed into the text field you selected.
+Listen2Me lets you write with your voice in the apps you already use. Click a
+text field, hold **Ctrl + Shift**, speak, and release to type. Use it for messages,
+emails, documents, game chat or AI prompts without switching away from your work.
 
-No account or subscription required.
+**Free to use. No account, subscription or dictation allowance.** Download a
+speech model to recognise your voice on your own computer, or connect your own
+speech-to-text server.
 
-**Now in beta: 0.7.24.** Free to use, with local speech recognition or your own
-hosted endpoint.
+**Now in beta: 0.7.24.** We'd love to hear what works well and what could be better.
 
 ## See it in action
 
-![Listen2Me live dictation demo: speech becomes text with a live on-screen preview](assets/demo/listen2me-demo.webp?v=20261104)
+![Listen2Me demo showing dictation, live typing and custom phrases](assets/demo/listen2me-demo.webp?v=20261104)
 
-The 67-second silent demo shows dictation, live typing and custom phrases.
+A 67-second silent recording of Listen2Me writing into another application.
 
 | Dictate | Connection |
 | --- | --- |
 | ![Dictate screen with waveform, shortcut controls and recognised words](assets/screenshots/dictate.webp) | ![Connection screen with selected model, language and live-preview options](assets/screenshots/connection.webp) |
 
-Screenshots were captured during development; small details may change between builds.
+Small interface details may change as the beta improves.
+
+## What you can do
+
+- **Write where you're working:** dictate into the selected text field, including game chat.
+- **Keep speech local:** use your CPU or a supported NVIDIA GPU. Local recognition works offline after setup.
+- **Go hands-free:** toggle listening for longer passages, or hold your chosen shortcut for a quick message.
+- **See words as you speak:** compatible streaming models show a live preview and can optionally type while you talk.
+- **Make your own commands:** replace spoken phrases with text, a new line or an Enter press. Keep separate presets for work, games and everyday use.
+- **Clean up hesitation sounds:** remove configurable fillers such as “uh” and “um” without another AI service.
+- **Spell a name:** use a phrase such as “spell name” to join recognised letters into a name.
+- **Transcribe a recording:** open an audio file and copy its transcript from Your words.
+- **Recover a take:** copy your recent transcript if the wrong field was selected or typing was interrupted.
 
 ## Downloads
 
-Download **`Listen2Me-Setup.exe`** from the [Releases page](https://github.com/hangry-labs/Listen2Me/releases).
-Configure hosted recognition or explicitly download your preferred local model.
-The installer runs per user and preserves existing settings and downloaded models.
-It is also the normal in-app update package.
+1. Download **[Listen2Me-Setup.exe](https://github.com/hangry-labs/Listen2Me/releases/latest/download/Listen2Me-Setup.exe)**.
+2. Run the installer and choose a local speech model, your own server, or **Set up later**.
+3. Select a text field, hold **Ctrl + Shift**, speak, then release all keys to type.
 
-Current beta releases provide the standard installer only; an offline bundle is
-not currently published. Once downloaded, local models work without an inference
-server or internet connection. Optional models and CUDA runtimes require their
-initial download.
+Requires **Windows 10 version 1809 or newer, or Windows 11, x64**, and a microphone.
+A dedicated GPU is optional. Setup can install Microsoft's WebView2 Runtime if
+it is missing, with your approval. Listen2Me installs for your Windows user
+without requiring administrator rights.
 
-No Git checkout or development tools are required. Preview releases may change frequently.
+Local speech models download separately; setup shows their size and progress.
+Interrupted downloads keep partial progress where the download server supports
+it. Once your model is installed, local dictation needs no internet connection.
+Normal updates preserve your settings and downloaded models.
 
-Current installers are **self-signed**, rather than signed by a publicly
-trusted publisher. Windows may display a trust warning. Each release includes
-SHA-256 checksums and a public publisher certificate for verification; installing
-that certificate as a Windows trusted root is not required or recommended.
-Download only from the official release page.
+### Download safety
 
-Listen2Me is early-access software. Releases on the stable update channel are
-available to the in-app updater; that channel name does not imply a mature 1.0
-release. Review the release notes before installing.
+Download only from this repository's [official Releases](https://github.com/hangry-labs/Listen2Me/releases).
+Current installers are **self-signed**, so Windows may show a publisher trust
+warning. Releases include checksums and the public publisher certificate for
+verification. You do not need to install that certificate as a trusted root.
 
-Requires Windows 10 version 1809 or newer / Windows 11, x64, a microphone and
-Microsoft WebView2 Runtime. The installer runs per user without administrator
-rights. Windows on ARM and non-Windows operating systems have not been qualified.
-
-If WebView2 is missing, setup offers to download Microsoft's runtime (about
-206 MiB) and install it after you accept Microsoft's licence. Existing runtimes
-are left alone. A cancelled or failed prerequisite download stops setup before
-Listen2Me files are changed. Downloaded speech models are a separate choice.
-
-
-## Transcribe an audio file
-
-On **Dictate**, click **Transcribe audio file** below **Mic found** and choose a
-recording. Listen2Me uses your selected local model or speech server and places
-the transcript in **Your words**, ready to copy. It also appears in recent takes.
-Nothing is typed into another application automatically.
-
-Files can be up to **25 MiB and 10 minutes**. WAV and MP3 are supported; other
-formats depend on the audio codecs available in Windows/WebView. You can cancel
-transcription, and a failed import keeps your previous takes. With a local model,
-file transcription works offline; a hosted endpoint receives the converted audio.
+Listen2Me is beta software. Check your transcript before sending an important
+message or relying on it for something sensitive.
 
 ## Choose your speech recognition
 
-The installation wizard can configure a hosted ASR endpoint or download a local
-model. New interactive installations select the recommended Parakeet model by
-default; choose another model, your own server, or Set up later before continuing.
-Updates and repairs preserve existing speech settings. You can also change your
-setup later inside the app.
+Open **Connection → Change** whenever you want to switch. The chooser shows
+compatible models, supported languages and available CPU/GPU options.
 
-- **Parakeet TDT v3 Q8:** recommended multilingual completed-take dictation, CPU
-  or a compatible NVIDIA CUDA GPU.
-- **Moonshine Medium Streaming:** recommended English live preview on CPU.
-- **Moonshine Small Streaming:** lighter English live-preview alternative on CPU.
-- **Nemotron 3.5 Q8:** multilingual live preview, CPU or compatible NVIDIA CUDA.
-- Whisper Base, Small and Large v3 Turbo Q5 are also available. Turbo can be slow
-  on CPU. Recognition and punctuation vary with speech, language and hardware.
+- **Parakeet TDT v3 Q8:** our recommended choice for multilingual dictation after you finish speaking, on CPU or supported NVIDIA GPU.
+- **Moonshine Medium Streaming:** our recommended choice for English live preview on CPU.
+- **Moonshine Small Streaming:** a lighter English streaming option.
+- **Nemotron 3.5 Q8:** multilingual streaming on CPU or supported NVIDIA GPU. Check the model's language list before choosing it.
+- **Whisper:** Base, Small and Large v3 Turbo Q5 are also available. Larger models can be much slower on CPU.
 
-With the standard installer, model/runtime downloads are optional and substantially larger than the installer.
-The Model Wizard shows download sizes, progress and supported acceleration before
-use. Model cards distinguish downloaded, partially downloaded and missing files,
-with separate CPU/GPU runtime status. Interrupted downloads retry automatically
-with a bounded backoff and retain partial progress for a later retry, including
-after restarting the app. Servers that do not support resuming restart that file.
-Every completed download is checked against its pinned SHA-256 before use. Local GPU runtimes are downloaded separately when selected. Model licences
-and attribution remain in their downloaded folders.
+Not every model supports every language or live transcription. Search the
+language picker by name or code to find your language. Recognition quality and
+punctuation depend on the model, your microphone and how you speak.
 
-Hosted recognition supports compatible OpenAI-style transcription APIs and Qwen
-ASR streaming APIs. Enter your endpoint and use Check to discover capabilities.
-Discovery does not send a recording. Hosted providers may apply charges or retain
-audio under their own terms.
-
-### Connection settings
-
-Connection changes save automatically after a short pause, with an amber pending
-indicator and a brief Saved confirmation. Language menus use native language
-names and the selected model's advertised capabilities. Some models only support
-English; unknown hosted APIs still allow an explicit language code.
-
-Use Connection → Change to choose Local or Endpoint. For local recognition, choose
-CPU or an available NVIDIA GPU, then optionally filter by language. Auto shows
-all models; English-only packs remain English-only. Compatible model cards are
-listed in recommended order. The hardware summary explains what was detected,
-and GPU is disabled when no compatible NVIDIA GPU/driver is available. GPU use
-requires its verified runtime. Filtering never starts a download; choose
-Download / verify explicitly, then Use selected model when it is ready.
-
-Endpoint setup accepts an optional API key. New keys are encrypted for the
-current Windows user and tied to that server; only a file reference is saved in
-settings. Leave the field blank to keep a same-server key. Switching servers
-requires a new key if authentication is needed; Use no API key disables it.
-Existing token-file configuration remains supported.
-
-Click the model language field and type a native or English language name/code
-to narrow the choices. Enter selects a match; Escape keeps the previous choice.
-A compatible detected NVIDIA GPU is preselected in the chooser, while CPU remains
-available. Opening it does not change your running configuration until you apply.
+Already run a speech server? Choose **Endpoint**, enter its address and optional
+API key, then check the connection. Compatible OpenAI-style transcription and
+Qwen ASR streaming servers are supported. Hosted recognition sends audio to that
+server; its operator's privacy terms and any charges apply.
 
 ## Controls
 
-The default shortcut is **Ctrl + Shift**; change it in Settings.
+Change the shortcut in **Settings** to suit your keyboard and workflow.
 
-- **Hold:** speak while holding the shortcut, then release all its keys to finish.
-- **Hands-free:** while keeping one modifier held, release and re-press the other
-  within one second during the first five seconds. Either key works. Release
-  the keys and keep talking; press the shortcut again to finish.
-- **Discard:** release one modifier but keep the other held for two seconds.
-- **Toggle:** select Toggle mode; one shortcut starts and the next finishes.
-- **Write while I speak:** optional with streaming. Use Toggle/hands-free or a
-  single non-modifier key such as F9 for live typing. Modifier holds buffer typing
-  until the modifiers are released. Late revisions can stop insertion; the final
-  transcript remains in Your words for recovery.
+- **Hold to talk:** hold the shortcut while speaking, then release all keys to finish.
+- **Toggle:** select Toggle mode; press the shortcut once to start and again to finish.
+- **Hands-free from Ctrl + Shift:** keep one key held, release and quickly press the other again within one second, during the first five seconds. Then release both and keep speaking. Press the shortcut again to finish. Either key can be the one you re-press.
+- **Discard a take:** release one modifier but keep the other held for two seconds, until the cancellation indicator completes.
 
-Select your destination text field first and keep it selected. Listen2Me does not
-restore an earlier window. Enter is sent only if you enable a custom phrase for it.
-It cannot reliably distinguish
-all internal text fields in every editor. Review the result before sending it.
-Cancelling stops further work; it does not remove text already typed or recall
-audio already received by a hosted server.
+Select your destination field before starting and keep it selected. Listen2Me
+uses keyboard input to write there; it does not restore a previous window.
+Some editors cannot reliably identify a change between their internal fields.
+Your transcript stays available in **Your words** if you need to copy it instead.
 
-### Recording and microphone
+With **Write while I speak**, use Toggle, hands-free or a single non-modifier
+key such as F9. Holding Ctrl + Shift buffers typing until the modifiers are
+released. Cancelling stops further work, but cannot erase text already typed
+or recall audio already sent to a hosted server.
 
-The recording limit defaults to one hour. Local completed takes are processed in
-shorter consecutive pieces; accuracy around boundaries and processing time depend
-on the model. Hosted providers have their own duration, upload-size and timeout
-limits; longer capture does not override them. One hour of mono audio uses about
-110 MiB for raw samples alone, with additional processing memory. Cancel still
-discards a take; reaching the configured limit finishes it. The selected
-microphone is enumerated without opening it until you use your shortcut.
-Listen2Me's own feedback field can also receive dictation.
+## Transcribe an audio file
+
+In **Dictate**, choose **Transcribe audio file** below the microphone indicator.
+Your selected speech model processes the recording and puts the transcript in
+**Your words** and recent takes, ready to copy. It does not type it into another
+application automatically.
+
+Files can be up to **25 MiB and 10 minutes**. WAV and MP3 are supported; other
+formats depend on Windows audio support. Local models process the file locally;
+a hosted endpoint receives its audio. You can cancel without losing earlier takes.
 
 ## Optional speech cleanup
 
-Hesitation-sound cleanup is enabled by default. It removes standalone "uh",
-"uhh", "uhm", "umm" and stretched variants from dictation, live preview and
-retained text. Turn off **Remove hesitation sounds** in Settings to keep them.
-Standalone "oh" and "um" are removed in Auto or English mode, including between
-spaces. An explicitly selected non-English language keeps them because they can
-be meaningful words. Quoted text, words such as "Ohio", "ah", "like" and "well",
-identifiers and custom replacement text stay intact. Cleanup runs locally after
-transcription, without sending your text to another AI.
-Cleanup does not turn a newly joined phrase into a keyboard command.
+**Remove hesitation sounds** is on by default. Use the **+** beside it in Settings
+to choose which built-in sounds to remove, add your own words or phrases, or
+restore the default list. Turn the main switch off to keep fillers in your text.
 
-Use the **+** beside **Remove hesitation sounds** to switch built-in sounds on or
-off and add your own filler words or short phrases. Remove additions individually
-or use **Restore defaults** to reset this list. The list saves on your computer;
-the main switch controls both built-in and extra fillers. Quoted text and literal
-phrase replacements are preserved. Restoring general preference defaults keeps
-your personal filler list; the filler editor has its own confirmed reset.
-
-Removing a filler at a sentence start capitalizes the next word: “Oh, yesterday…”
-becomes “Yesterday…”. Mid-sentence removals preserve casing and existing clause
-commas, as in “today, oh did…” becoming “today, did…”.
-
-## Spelling names
-
-In **Phrases → Add phrase**, enter a command such as “spell name” under **When I
-say**, then select **Join spelled names** under **Then**. No replacement text is
-needed. Add alternative wordings if you like. The spelling rule can be enabled,
-disabled or removed like any other phrase, and only the selected preset is active.
-
-Say “spell name A D A M”, “spell name A-D-A-M” or “spell name ADAM” to write **Adam**.
-Mixed spaces and hyphens are supported. Say one name per command. A normal
-following word or punctuation ends an isolated letter sequence. Names receive
-an initial capital. The app joins the text your speech model returns; it cannot
-recover letters the model mishears or decode phonetic words such as alpha and
-bravo. Quoted commands and custom replacement text stay literal. Live writing
-buffers a spelling sequence until the name is complete. This formatting uses no
-additional AI or network service.
-
-The older separate spelling option is migrated into phrase rules when upgrading.
-Existing explicit phrases with the same wording are kept.
+The built-in list covers “uh”, “um”, “oh” and their stretched forms. “Um” and
+“oh” stay intact when you explicitly choose a non-English language. Normal words,
+quoted text and your replacement phrases are preserved. Cleanup happens locally
+and does not send your transcript to another AI service.
 
 ## Custom phrases
 
-In **Phrases**, map words you say to replacement text or an optional **Shift+Enter**
-or **Enter** action. For example, “my page” can write your website address.
-Rules are saved on your computer and can be edited, disabled or removed.
-To remove your own filler words, choose **Replacement text** and leave **Write**
-empty. For example, map your personal thinking phrase to nothing.
-Use **Add wording** inside a rule to map different ways of saying something to
-the same result. A rule can have up to 20 wordings, each matched as a literal
-whole phrase. Editing the shared result updates all of them.
+Open **Phrases → Add phrase** to choose what happens when you say something:
 
-Choose a named preset for each game, project or situation. Only the selected set
-is active. Create, rename, duplicate or delete sets in the Phrases tab; your
-existing phrases are kept in **Default**. Selection and edits save automatically.
-Switching presets is manual and available between takes. You can keep up to
-20 presets with up to 50 phrases in each set.
+- Replace **“my page”** with your website address.
+- Map **“hashtag new line”** to **Shift + Enter**.
+- Map **“hashtag enter”** to **Enter**.
+- Replace a personal filler phrase with nothing by leaving the replacement empty.
 
-Use distinctive commands such as **“hashtag new line”** for Shift+Enter and
-**“hashtag enter”** for Enter, with any wording in your language. These examples
-are not enabled automatically. If your model writes “hashtag” as `#`, add that
-spelling separately. Matching ignores case and uses whole words.
+These examples are suggestions, not automatic commands. Choose wording that is
+unlikely to occur in ordinary speech. Enter can submit a form or send a message;
+the receiving app decides what the key does.
 
-Shift+Enter usually adds a line break; Enter can send a message or submit a form.
-The receiving app decides. With live writing, actions may happen before you finish
-speaking and cancellation cannot undo them. Unfinished phrases stay buffered;
-late revisions stop further insertion instead of replaying an action.
+Matching ignores capitalisation. Use **Add wording** for different ways of saying
+the same command. Presets let you keep separate sets for a game, project or other
+situation; only the selected set is active. Everything saves on your computer.
+
+### Spelling names
+
+Add a phrase such as **“spell name”** and choose **Join spelled names** as its
+action. Say “spell name A D A M”, “spell name A-D-A-M” or “spell name ADAM” to
+write **Adam**. Use one name per command. This joins the letters your speech model
+recognises; it cannot recover letters the model mishears.
 
 ## Settings
 
-Settings also saves automatically after a short pause. A pending-only dot and floating
-Saved confirmation show progress; failed or invalid edits stay in the form.
-Timing options share a row and their info buttons explain limits. Hold/Toggle
-help is beside the recording-mode switch on Dictate.
+Settings save automatically. You can change your shortcut, typing speed,
+recording limit and live-preview preferences, or use **Restore defaults** if
+you want to start again. Your selected model and downloaded files are kept.
 
-Use Settings → Restore defaults to reset shortcut, timing, checkbox and model
-readiness options. Your selected model, endpoint, microphone and downloaded files
-are kept. Out-of-range numeric values are highlighted with their allowed ranges
-and stay unsaved until corrected. The startup preference enables the shortcut
-when the app opens; it never starts recording. With Keep ready, an enabled local
-model may preload without opening the microphone.
+Local models stay ready in memory by default for a quicker start. Choose a
+memory-saving option to load on demand and unload between takes instead.
+Neither model loading nor starting the app opens the microphone by itself.
 
-The About tab contains contacts and legal documents. Support Us opens the
-compact project card; Send feedback opens the optional form and retains drafts
-when closed or when delivery fails. Privacy first. Local by choice: hosted
-recognition still sends audio to the endpoint you select.
+**Start with Windows** is optional and off by default. It starts Listen2Me in
+the tray when you sign in. The default recording limit is one hour; hosted
+servers may impose shorter limits of their own.
 
 ## Privacy and updates
 
-Local recognition processes audio on your computer. Hosted recognition sends it
-directly to your chosen server. There is no built-in publisher analytics,
-advertising or automatic upload of recordings/transcripts to Hangry Labs.
-Session history is kept in process memory. Windows paging/crash dumps and the
-receiving application's own saving behavior are separate.
+- **Local mode:** your audio is processed on your computer. It works offline after the initial model download.
+- **Your own endpoint:** audio goes to the speech server you choose.
+- **No publisher analytics or advertising:** Listen2Me does not automatically upload your recordings or transcripts to Hangry Labs.
+- **Recent takes stay in memory:** they are available during the session, rather than saved as a recording archive.
+- **Optional feedback:** sending feedback shares your message, optional reply email, app version/platform. The website receives normal connection information and uses it to limit repeated submissions. No account is required.
 
-The optional **Start with Windows** setting is off by default. It opens Listen2Me
-in the tray when you sign in. Shortcut arming and model readiness remain separate;
-it does not start recording. Uninstall removes the app's startup entry. Windows
-may independently disable startup in Startup apps or Task Manager.
+Updates are checked through GitHub when the app opens, unless you disable that
+option. The footer also offers a manual check. You decide whether to download
+and install an update; it is not installed silently. Model downloads and hosted
+speech services make their own network connections. Microsoft's WebView2 Runtime
+has its own update behaviour.
 
-Locking or sleeping cancels the current take. Previously enabled shortcuts
-recover after returning to the normal desktop and releasing their keys; manually
-paused dictation stays paused. Recovery never resumes the interrupted recording.
+Settings and models normally live in `%LOCALAPPDATA%/Listen2Me`. They survive
+normal updates and uninstall, so you can keep them if you reinstall.
 
-Settings/models normally live in `%LOCALAPPDATA%/Listen2Me` and survive upgrades
-and uninstall. Local models load and stay ready by default without opening the
-microphone. Settings can instead load on demand and unload after a chosen idle
-period, or after each take. Pause in the tray releases the worker. The voice card
-groups model, processing location, waveform, Hold/Toggle and the shortcut. Its
-release/discard help sits below it; About has a separate tab.
-
-The footer shows your selected ASR and local loading/residency state. Hosted
-server memory is controlled by the provider and cannot be inferred from a
-successful connection. Click the version to open releases, or its circular
-refresh icon to check for updates. The footer offers an explicit check, verified download and Install action.
-Install starts the verified installer and restarts Listen2Me without switching
-tabs. Pending valid changes are saved first; correct invalid changes before
-installing.
-Listen2Me checks for a newer version on opening by default; turn this off in
-Settings for manual-only checks. It never downloads or installs app updates
-automatically. Routine updates use
-the small standard installer, retaining previously installed models, including
-Parakeet from the offline edition. Microsoft's WebView2 Runtime has its own
-automatic-update and SmartScreen behavior when online. The installer preserves settings and
-models; Fresh settings makes recoverable configuration/cache backups. Versions
-older than 0.1.9 need one manual tray Quit before their first update.
-
-The Support Us button has an optional feedback form; no email or account is required.
-Reports are retained in the website feedback inbox without email forwarding. Only submitted text,
-type, optional email and app version/platform are sent; the website also sees
-ordinary connection metadata. Failed submissions remain in the form and are not
-retried automatically.
-
-Read the [privacy notice](PRIVACY.txt), [software licence](LICENSE.txt) and
-[third-party notices](THIRD_PARTY_NOTICES.txt). The app also includes About,
-contacts, its licence and privacy notice offline. Listen2Me is provided
-free of charge and as is. Recognition can be wrong.
+You can read the [privacy notice](PRIVACY.txt), [software licence](LICENSE.txt)
+and [third-party notices](THIRD_PARTY_NOTICES.txt) here or in the app's About tab.
+Listen2Me is proprietary freeware, provided free of charge and as is.
 
 ## Contact
 
-- General questions and privacy requests: [contact@hangrylabs.app](mailto:contact@hangrylabs.app)
-- Product help: [support@hangrylabs.app](mailto:support@hangrylabs.app)
-- Private vulnerability reports: [security@hangrylabs.app](mailto:security@hangrylabs.app)
-- Ordinary bugs/features: [GitHub issues](https://github.com/hangry-labs/Listen2Me/issues)
-- Project website: [Hangry Labs](https://hangrylabs.app/)
+Have a suggestion or something that doesn't work? Use **Support Us → Send
+feedback** in the app, or [open a GitHub issue](https://github.com/hangry-labs/Listen2Me/issues).
+Please keep private recordings, credentials and sensitive transcripts out of public issues.
 
-Hangry Labs is the project/publisher brand. No support response time or service
-level is promised. Please do not post credentials, private recordings or sensitive
-dictation in public issues.
+- Help using Listen2Me: [support@hangrylabs.app](mailto:support@hangrylabs.app)
+- General questions and privacy: [contact@hangrylabs.app](mailto:contact@hangrylabs.app)
+- Private security reports: [security@hangrylabs.app](mailto:security@hangrylabs.app)
+- More free tools from Hangry Labs: [hangrylabs.app/software](https://hangrylabs.app/software)
